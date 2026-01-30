@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGAL Academy: Carbohydrates</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Merriweather -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Theme Setup */
+        :root {
+            --bg-dark: #0b141a; /* WhatsApp-ish dark depth */
+            --bg-gradient-start: #111b21;
+            --bg-gradient-end: #000000;
+            --text-primary: #e9edef;
+            --text-accent: #53bdeb; /* Soft blue for emphasis */
+            --highlight: #00a884; /* WhatsApp Green for specific pops */
+            --font-main: 'Merriweather', serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Override */
+        .lecture-text {
+            font-size: 26px; /* Specifically requested size */
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+
+        /* Scroll Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 100;
+        }
+        #progress-bar {
+            height: 100%;
+            background: var(--highlight);
+            width: 0%;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px var(--highlight);
+        }
+
+        /* Text Reveal Animation Classes */
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        
+        .reveal-text.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Custom Scrollbar for Chrome/Safari */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374045;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #53bdeb;
+        }
+
+        /* Button Pulse Animation */
+        @keyframes subtle-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 168, 132, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(0, 168, 132, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 168, 132, 0); }
+        }
+
+        .cta-button {
+            animation: subtle-pulse 2s infinite;
+        }
+
+        /* Emphasized Text */
+        .highlight {
+            color: var(--text-accent);
+            font-weight: 700;
+        }
+        
+        .super-highlight {
+            color: var(--highlight);
+            font-weight: 700;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .lecture-text {
+                font-size: 20px; /* Slightly smaller on mobile for flow */
+                line-height: 1.7;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="max-w-3xl mx-auto px-6 py-12 md:py-20 relative">
+
+        <!-- Logo Section -->
+        <div class="flex justify-center mb-16 reveal-text">
+            <!-- Logo set to responsive width, max-width constrained for visual balance, but high quality source used -->
+            <img src="https://i.imgur.com/eP0BFrd.png" alt="HGAL Academy Logo" class="w-full max-w-[350px] object-contain drop-shadow-2xl">
+        </div>
+
+        <!-- Lecture Content -->
+        <div class="lecture-text space-y-12 text-gray-200">
+
+            <!-- Introduction -->
+            <div class="reveal-text">
+                <p>Hello there, welcome to class! 👋</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Today, we are going to explore something that gives you the energy to run, play, think, and grow. We are talking about <span class="highlight">Carbohydrates</span>! 🍞🍚🥔</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Think of carbohydrates as the fuel for your body's engine. Just like a car needs petrol to move, you need carbohydrates to function. Let’s dive in and see exactly what they are made of.</p>
+            </div>
+
+            <!-- Types of Carbs -->
+            <div class="reveal-text">
+                <p class="super-highlight text-3xl mb-4">Types of Carbohydrates</p>
+                <p>Did you know there isn't just one type of carbohydrate? There are actually <span class="highlight">two main types</span>.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>They are:</p>
+                <ul class="list-none space-y-2 mt-4 ml-2">
+                    <li>1️⃣ <span class="highlight">Simple Carbohydrates</span></li>
+                    <li>2️⃣ <span class="highlight">Complex Carbohydrates</span></li>
+                </ul>
+            </div>
+
+            <div class="reveal-text">
+                <p>Let's start with <span class="highlight">Simple Carbohydrates</span>. These are very easy for humans and animals to digest. It’s like eating a grape—your body breaks it down super fast! ⚡</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Examples of simple carbohydrates are <strong>Monosaccharides</strong> and <strong>Disaccharides</strong>. Big words, right? Let me explain.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>"Mono" means one. So, Monosaccharides are single sugar units. The most important one you need to remember is <span class="super-highlight">Glucose</span>.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🧠 <strong>Fun Fact:</strong> Glucose is needed <em>every single second</em> by your brain! Your brain is a hungry machine that runs on glucose.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Other examples of monosaccharides are <strong>Fructose</strong> (found in fruits 🍎) and <strong>Galactose</strong>.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Okay, let’s now move on to <span class="highlight">Disaccharides</span>. "Di" means two. These are made of <em>two</em> molecules of sugar stuck together.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Here are three famous ones:</p>
+                <p>🍬 <strong>Sucrose:</strong> This is normal table sugar. When your body breaks it down, it turns into Fructose and Glucose.</p>
+                <p>🌾 <strong>Maltose:</strong> When broken down, it splits into two molecules of Glucose.</p>
+                <p>🥛 <strong>Lactose:</strong> This is popularly referred to as <strong>milk sugar</strong>. When digested, it yields Glucose and Galactose.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Now that we understand the simple ones, let’s talk about <span class="highlight">Complex Carbohydrates</span>.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>These are called <strong>Polysaccharides</strong>. Imagine a long train with many cars attached together. 🚂🚃🚃🚃</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Polysaccharides contain as many as <span class="highlight">2000 simple carbohydrate units</span> in long chains! That is huge!</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Examples of these complex giants are:</p>
+                <p>1. <strong>Starch:</strong> Found in seeds, grains, and tubers (like yams).</p>
+                <p>2. <strong>Glycogen:</strong> This is a form of glucose storage in animals.</p>
+                <p>3. <strong>Cellulose:</strong> Found in plants.</p>
+            </div>
+
+            <!-- Functions -->
+            <div class="reveal-text mt-16">
+                <p class="super-highlight text-3xl mb-4">Functions of Carbohydrates</p>
+                <p>So, why do we eat them? What do they actually <em>do</em> for us? Let’s look at their jobs. 🛠️</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>⚡ <strong>1. Body Fuel:</strong> It supplies energy which serves as fuel for both internal activities (like your heart beating) and external activities (like running or dancing).</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🛡️ <strong>2. It Spares Protein:</strong> This is a cool one! It spares protein from being used as a source of energy. Think of protein as "building blocks" for your muscles. If you don't eat enough carbs, your body burns the blocks instead! We want to keep the blocks for growing.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🔢 <strong>The Math:</strong> One gram of carbohydrate will supply <strong>4 kilocalories</strong> of energy to the body.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🧠 <strong>3. Brain Power:</strong> As we mentioned before, it supplies glucose to the body, especially the brain.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🔥 <strong>4. Fat Burner:</strong> It actually helps the body to burn body fat efficiently.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>😋 <strong>5. Flavour:</strong> It adds flavour to our diet. Imagine food without any sweetness or starchiness!</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🧬 <strong>6. Genetic Helper:</strong> It helps in the formation of genetic materials. These are the blueprints of life: <strong>Deoxyribonucleic acid (DNA)</strong> and <strong>Ribonucleic acid (RNA)</strong>.</p>
+            </div>
+
+            <!-- Digestion -->
+            <div class="reveal-text mt-16">
+                <p class="super-highlight text-3xl mb-4">Digestion of Carbohydrates</p>
+                <p>Let’s now dive into what happens when you take a bite of bread. 🥪 The journey begins right in your mouth!</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>When you chew, the food is broken down into small pieces and mixed with your spit (saliva). Your saliva contains a special enzyme called <span class="highlight">salivary amylase (or ptyalin)</span>.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>This enzyme starts cutting up the disaccharides, such as maltose, right there in your mouth.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>The digestion continues in the <strong>Duodenum</strong> (which is the first part of the small intestine). Here, it meets <span class="highlight">pancreatic amylase</span>.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>This enzyme continues to break down other disaccharides into the final end product. Do you remember what the end product usually is? Yes, it is <span class="super-highlight">Glucose</span>! 🎯</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Next, we look at the specific enzymes in the intestine that finish the job:</p>
+                <p>🔹 <strong>Maltase:</strong> Breaks down maltose into two molecules of glucose.</p>
+                <p>🔹 <strong>Lactase:</strong> Breaks down lactose into one molecule of glucose and one of galactose.</p>
+                <p>🔹 <strong>Sucrase:</strong> Converts sucrose into one molecule of glucose and one of fructose.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>⚠️ <strong>Important Note:</strong> Remember that the ultimate end product of carbohydrate digestion is <strong>glucose</strong>.</p>
+            </div>
+
+            <!-- Allowance -->
+            <div class="reveal-text mt-16">
+                <p class="super-highlight text-3xl mb-4">Recommended Allowances</p>
+                <p>At this point, it’s important to consider how much we should eat.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Since carbohydrate is universally available (it's everywhere!), there is no specific rule or "basis" for the formulation of a dietary allowance for it.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>However, keep in mind that carbohydrates and fats are the main suppliers of energy.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>🤰 You need <strong>more</strong> energy during specific times, such as pregnancy, lactation (breastfeeding), and infancy (when you are a baby).</p>
+            </div>
+
+            <!-- Sources -->
+            <div class="reveal-text mt-16">
+                <p class="super-highlight text-3xl mb-4">Food Sources of Carbohydrates</p>
+                <p>Finally, let's look at where we can find these carbohydrates in our kitchen. 🥣</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>The major carbohydrates are found in:</p>
+                <p>🍭 <strong>Sugars</strong></p>
+                <p>🌾 <strong>Cereal grains:</strong> Corn, millet, wheat, rice, guinea corn, and acha.</p>
+                <p>🥜 <strong>Legumes:</strong> Beans, soya beans, and groundnut.</p>
+                <p>🍠 <strong>Others:</strong> Dried fruits, tubers (yams/potatoes), and vegetables.</p>
+            </div>
+
+            <!-- VIP Transition -->
+            <div class="reveal-text mt-20 pt-10 border-t border-gray-800">
+                <p>That brings us to the end of our lesson on Carbohydrates! You've done a great job following along. 🌟</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>But wait! Before you go... if you want even more cool study materials and bonuses (worth #115,000), you should check this out.</p>
+            </div>
+
+            <div class="reveal-text">
+                <p>Join our VIP if you're yet to! 👇</p>
+            </div>
+
+            <div class="reveal-text pb-20">
+                <a href="https://tinyurl.com/2dbtvx2b" target="_blank" class="block w-full">
+                    <button class="cta-button w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-5 px-8 rounded-2xl text-xl transition-colors duration-300 shadow-lg flex items-center justify-center gap-3">
+                        Click Here 🚀
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Scroll Progress Bar Logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        });
+
+        // Intersection Observer for Text Reveal Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: Stop observing once revealed so it doesn't animate out again
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        // Target all text blocks
+        document.querySelectorAll('.reveal-text').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+                                                                        </html>
